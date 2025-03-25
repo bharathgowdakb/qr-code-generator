@@ -9,7 +9,7 @@ A simple **QR Code Generator** built using **HTML, CSS, and JavaScript**. Users 
 - 🌟 Uses `qrcode.js` for QR code generation
 
  ## 🌐 Live Demo  
-🔗 [Click Here to Try the QR Code Generator](https://bharathgowdakb.github.io/qr-code-generator/)
+🔗 [Click Here to Try the QR Code Generator](https://github.com/bharathgowdakb/qr-code-generator/)
 
 
 ## 📂 Project Structure
