@@ -8,8 +8,8 @@ A simple **QR Code Generator** built using **HTML, CSS, and JavaScript**. Users 
 - ⬇️ Download QR code as an image
 - 🌟 Uses `qrcode.js` for QR code generation
 
-## 🖥️ Live Demo
-[Click here to see the live demo](#) *(Replace `#` with your GitHub Pages link after deployment.)*
+## 🌐 Live Demo  
+🔗 [Click Here to Try the QR Code Generator](https://yourusername.github.io/qr-code-generator/)
 
 ## 📂 Project Structure
 
