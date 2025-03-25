@@ -1,23 +1,33 @@
-document.getElementById('generateButton').addEventListener('click', function() {
-    const text = document.getElementById('qrInput').value;
-    if (text) {
-        // Generate the QR code using the QRCode library
-        QRCode.toDataURL(text, function (err, url) {
-            if (err) throw err;
-            // Display the QR code image
-            document.getElementById('qrCode').innerHTML = `<img src="${url}" alt="QR Code" />`;
+document.getElementById("generateButton").addEventListener("click", function() {
+    const text = document.getElementById("qrInput").value;
+    const qrContainer = document.getElementById("qrCode");
 
-            // Show the download button
-            document.getElementById('downloadButton').style.display = 'block';
-            // Add download functionality
-            document.getElementById('downloadButton').addEventListener('click', function() {
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = 'qrcode.png';
-                link.click();
-            });
+    // Clear previous QR code
+    qrContainer.innerHTML = "";
+
+    if (text) {
+        // Generate QR code
+        let qr = new QRCode(qrContainer, {
+            text: text,
+            width: 200,
+            height: 200
         });
+
+        // Show the download button
+        setTimeout(() => {
+            const qrCanvas = qrContainer.querySelector("canvas");
+            if (qrCanvas) {
+                document.getElementById("downloadButton").style.display = "block";
+                document.getElementById("downloadButton").addEventListener("click", function() {
+                    const link = document.createElement("a");
+                    link.href = qrCanvas.toDataURL("image/png");
+                    link.download = "qr_code.png";
+                    link.click();
+                });
+            }
+        }, 500);
     } else {
         alert("Please enter some text!");
     }
 });
+
